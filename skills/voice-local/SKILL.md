@@ -1,34 +1,34 @@
 ---
 name: voice-local
-description: Transcribe voice notes with local Whisper — audio stays local.
+description: Transcribe WhatsApp voice notes with local Whisper — audio stays on the machine.
 ---
 
 # voice-local
 
-> Status: **v0 stub** — melt body next. Gold Hat: draft-only messaging, teach consent, no dark spam patterns.
+> Status: **stub (L1–L2 cue)** — not a melted transcriber. Do not invent cloud STT or upload the audio.
+
+Turn a voice note into text on this machine. Gold Hat: local Whisper empowers; shipping audio to a vendor extracts.
 
 ## When to use
 
-Transcribe voice notes with local Whisper — audio stays local.
+- A pulled message is audio with no body
+- The human has a local Whisper install (whisper.cpp or openai-whisper) and a file path they own
 
-## Hard rules (always)
+## Cue (do this much; no more)
 
-- **Draft-only by default.** Never send without an explicit human confirm gate.
-- **No dark spam patterns:** urgency fakes, fake scarcity, guilt loops, silent mass-blast, hidden opt-outs.
-- **Teach consent:** every outbound path explains who sees it, why, and how to stop.
-- **No secrets** in prompts, registry examples, or logs (phones, tokens, chat ids stay local).
-- Provider is swappable (Periskope reference MCP); skills own workflow logic, not vendor lock-in.
+1. Audio stays local. Refuse cloud speech-to-text "just this once".
+2. If no local binary / no file path, say what is missing. Do not fetch a media URL to a third party.
+3. Return text as a draft input — not a send. Mark uncertain words instead of guessing commitments.
+4. Do not keep extra copies of the audio in the repo.
 
-## Steps (stub)
-
-1. Restate intent and audience.
-2. Apply this skill's checklist.
-3. Produce draft / triage output with measurable checks.
-4. Hand off to `consent-gate` before any send.
+Hand readable text to `thread-triage` (stub) or `draft-reply` (melted). Outbound still needs `consent-gate`.
 
 ## Measurable checks
 
-- [ ] Output is a draft or report, not a silent send
-- [ ] Quiet-hours / consent considered
-- [ ] No spam-template residue
-- [ ] No real phone numbers or API keys in output
+- [ ] No cloud STT
+- [ ] No send
+- [ ] No secrets/phones echoed from the transcript unless the human asked to see them
+
+## Suite
+
+Doctrine: [grok-build-reality-os](https://github.com/HermeticOrmus/grok-build-reality-os). Gold Hat: [GOLD_HAT.md](../../GOLD_HAT.md). Sibling packs: [README suite footer](../../README.md).

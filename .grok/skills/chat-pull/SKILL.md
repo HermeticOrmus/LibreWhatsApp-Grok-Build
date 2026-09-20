@@ -1,34 +1,36 @@
 ---
 name: chat-pull
-description: Pull chat and show only-what-is-new (registry aliases).
+description: Pull a WhatsApp chat and show only-what-is-new via local registry aliases.
 ---
 
 # chat-pull
 
-> Status: **v0 stub** — melt body next. Gold Hat: draft-only messaging, teach consent, no dark spam patterns.
+> Status: **stub (L1–L2 cue)** — not a melted pull protocol. Do not invent Claude `/pull` depth, state-file schemas, or slash-command theater.
+
+Fetch a chat. Show what is new since last look. Gold Hat: aliases live on the operator machine; the repo never ships real numbers.
 
 ## When to use
 
-Pull chat and show only-what-is-new (registry aliases).
+- "What is new in `team` / `teammate`"
+- Before `draft-reply` when you need thread context
+- After wiring a provider (Periskope is the reference MCP)
 
-## Hard rules (always)
+## Cue (do this much; no more)
 
-- **Draft-only by default.** Never send without an explicit human confirm gate.
-- **No dark spam patterns:** urgency fakes, fake scarcity, guilt loops, silent mass-blast, hidden opt-outs.
-- **Teach consent:** every outbound path explains who sees it, why, and how to stop.
-- **No secrets** in prompts, registry examples, or logs (phones, tokens, chat ids stay local).
-- Provider is swappable (Periskope reference MCP); skills own workflow logic, not vendor lock-in.
+1. Resolve the alias from `~/.grok/wa-registry.json` (copy `registry.example.json`). If the registry is missing, stop and say so.
+2. Call the provider **list-messages** seam only. Do not send.
+3. Prefer only-what-is-new. Quote bodies verbatim. Do not paraphrase.
+4. Sender gotcha (Periskope-shaped): the wrong account number yields an empty slice with **no error**. Ask the human to check `provider.default_sender_phone` on their machine — do not print the number.
+5. Voice notes have no text — point at `voice-local` (still a stub).
 
-## Steps (stub)
-
-1. Restate intent and audience.
-2. Apply this skill's checklist.
-3. Produce draft / triage output with measurable checks.
-4. Hand off to `consent-gate` before any send.
+Hand off leftovers to `thread-triage` (stub) and `draft-reply` (melted). Never embed chat ids or tokens in output.
 
 ## Measurable checks
 
-- [ ] Output is a draft or report, not a silent send
-- [ ] Quiet-hours / consent considered
-- [ ] No spam-template residue
-- [ ] No real phone numbers or API keys in output
+- [ ] No send
+- [ ] Aliases, not raw ids, in what you print
+- [ ] Empty result named as possible sender mismatch, not "chat is quiet" unless you know that
+
+## Suite
+
+Doctrine: [grok-build-reality-os](https://github.com/HermeticOrmus/grok-build-reality-os). Gold Hat: [GOLD_HAT.md](../../GOLD_HAT.md). Sibling packs: [README suite footer](../../README.md).

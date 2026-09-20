@@ -1,34 +1,35 @@
 ---
 name: thread-triage
-description: Triage open loops and priority threads without nagging.
+description: Triage open WhatsApp loops and priority threads without nagging.
 ---
 
 # thread-triage
 
-> Status: **v0 stub** — melt body next. Gold Hat: draft-only messaging, teach consent, no dark spam patterns.
+> Status: **stub (L1–L2 cue)** — not a melted prioritizer. Do not invent scores, SLA clocks, or nag sequences.
+
+See the open loops. Do not manufacture urgency. Gold Hat: triage that guilt-trips the recipient is extract.
 
 ## When to use
 
-Triage open loops and priority threads without nagging.
+- "What needs a reply?"
+- After `chat-pull` (stub) when several threads are in play
+- Before `draft-reply` (melted) so you draft the right one
 
-## Hard rules (always)
+## Cue (do this much; no more)
 
-- **Draft-only by default.** Never send without an explicit human confirm gate.
-- **No dark spam patterns:** urgency fakes, fake scarcity, guilt loops, silent mass-blast, hidden opt-outs.
-- **Teach consent:** every outbound path explains who sees it, why, and how to stop.
-- **No secrets** in prompts, registry examples, or logs (phones, tokens, chat ids stay local).
-- Provider is swappable (Periskope reference MCP); skills own workflow logic, not vendor lock-in.
+1. List threads as aliases. Rank by: they asked you something unanswered; a decision is blocked; everything else.
+2. One recommended next draft, not a blast list.
+3. No "you haven't replied in N hours" shame copy. No fake deadlines.
+4. If nothing is open, say so. Empty triage is allowed.
 
-## Steps (stub)
-
-1. Restate intent and audience.
-2. Apply this skill's checklist.
-3. Produce draft / triage output with measurable checks.
-4. Hand off to `consent-gate` before any send.
+Hand the chosen thread to `draft-reply`. Any outbound still hits `template-scrub` + `consent-gate`.
 
 ## Measurable checks
 
-- [ ] Output is a draft or report, not a silent send
-- [ ] Quiet-hours / consent considered
-- [ ] No spam-template residue
-- [ ] No real phone numbers or API keys in output
+- [ ] Report only; no send
+- [ ] No nag / guilt / countdown language
+- [ ] Aliases, not phones
+
+## Suite
+
+Doctrine: [grok-build-reality-os](https://github.com/HermeticOrmus/grok-build-reality-os). Gold Hat: [GOLD_HAT.md](../../GOLD_HAT.md). Sibling packs: [README suite footer](../../README.md).

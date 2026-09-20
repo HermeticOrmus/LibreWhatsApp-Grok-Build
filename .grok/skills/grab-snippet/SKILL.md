@@ -1,34 +1,34 @@
 ---
 name: grab-snippet
-description: Grab latest URL, command, or code block from a chat.
+description: Grab the latest URL, command, or code block from a WhatsApp chat.
 ---
 
 # grab-snippet
 
-> Status: **v0 stub** — melt body next. Gold Hat: draft-only messaging, teach consent, no dark spam patterns.
+> Status: **stub (L1–L2 cue)** — not a melted clipboard pipeline. Do not invent `/grab` slash-command theater.
+
+Lift the useful fragment. Gold Hat: copy the snippet, not the contact graph.
 
 ## When to use
 
-Grab latest URL, command, or code block from a chat.
+- "Get the URL / command / code they just sent"
+- After `chat-pull` when the human wants one artifact, not a draft
 
-## Hard rules (always)
+## Cue (do this much; no more)
 
-- **Draft-only by default.** Never send without an explicit human confirm gate.
-- **No dark spam patterns:** urgency fakes, fake scarcity, guilt loops, silent mass-blast, hidden opt-outs.
-- **Teach consent:** every outbound path explains who sees it, why, and how to stop.
-- **No secrets** in prompts, registry examples, or logs (phones, tokens, chat ids stay local).
-- Provider is swappable (Periskope reference MCP); skills own workflow logic, not vendor lock-in.
+1. Prefer the latest matching block in the current pull or pasted thread.
+2. Quote verbatim. Do not "clean up" a command into something else.
+3. Strip secrets if the snippet contains tokens or phones — show a redacted form and say you redacted.
+4. Clipboard helpers (`wl-copy`, `xclip`, `pbcopy`) are optional and local. Do not upload the snippet.
 
-## Steps (stub)
-
-1. Restate intent and audience.
-2. Apply this skill's checklist.
-3. Produce draft / triage output with measurable checks.
-4. Hand off to `consent-gate` before any send.
+This skill does not send. If they want a reply about the snippet, use `draft-reply`.
 
 ## Measurable checks
 
-- [ ] Output is a draft or report, not a silent send
-- [ ] Quiet-hours / consent considered
-- [ ] No spam-template residue
-- [ ] No real phone numbers or API keys in output
+- [ ] One snippet, verbatim or honestly redacted
+- [ ] No send
+- [ ] No raw secrets in the output
+
+## Suite
+
+Doctrine: [grok-build-reality-os](https://github.com/HermeticOrmus/grok-build-reality-os). Gold Hat: [GOLD_HAT.md](../../GOLD_HAT.md). Sibling packs: [README suite footer](../../README.md).
