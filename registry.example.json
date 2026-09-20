@@ -1,0 +1,56 @@
+{
+  "_comment": "Copy this to ~/.grok/wa-registry.json and fill in your own values. That file stays on your machine and is never committed. Skills resolve aliases here; the repo ships zero real numbers.",
+
+  "provider": {
+    "type": "periskope",
+    "_note_type": "Reference adapter. Any provider that lists messages and (after consent-gate) sends a message can be wired the same way. Skills own workflow; the provider is yours.",
+    "api_key_env": "PERISKOPE_API_KEY",
+    "org_phone": "<YOUR_WHATSAPP_NUMBER>",
+    "_note_org_phone": "The number your provider account sends from. Digits only, country code, no +. Recipients see this number's saved name — not an AI brand.",
+    "default_sender_phone": "<YOUR_WHATSAPP_NUMBER>",
+    "_note_sender_phone": "Read identity. Some providers only return messages this number participated in. Wrong value → empty slice, no error. Keep the real value on your machine."
+  },
+
+  "targets": {
+    "me": {
+      "channel": "wa",
+      "id": "<YOUR_PHONE>@c.us",
+      "type": "dm",
+      "note": "Your own DM. Notes-to-self / notification target."
+    },
+    "team": {
+      "channel": "wa",
+      "id": "<GROUP_ID>@g.us",
+      "type": "group",
+      "style": "concise, fact-based, lead with the outcome",
+      "note": "A group chat. Group ids end in @g.us."
+    },
+    "teammate": {
+      "channel": "wa",
+      "id": "<THEIR_PHONE>@c.us",
+      "type": "dm",
+      "style": "short, direct",
+      "note": "A one-to-one chat. DM ids end in @c.us."
+    }
+  },
+
+  "inference": {
+    "_comment": "Optional. When a pull/draft has no explicit target, score known aliases against the current conversation. Keep this file local.",
+    "default_target": "team",
+    "signals": [
+      { "match": "deploy|shipped|done|PR #", "target": "team", "weight": 8 },
+      { "match": "personal|family", "target": "me", "weight": 6 }
+    ]
+  },
+
+  "sender_resolution": {
+    "_comment": "Optional. Map a sender id to a display name for readable pull output. Without an entry, the raw id is shown locally — still do not paste raw ids into git.",
+    "<YOUR_PHONE>@c.us": "Me"
+  },
+
+  "posture": {
+    "draft_only": true,
+    "require_consent_gate": true,
+    "_note": "LibreWhatsApp-Grok-Build does not honor a skip-preview flag. Confirm phrases live in the consent-gate skill."
+  }
+}

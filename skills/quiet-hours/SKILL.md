@@ -1,34 +1,34 @@
 ---
 name: quiet-hours
-description: Enforce quiet-hours windows; queue or refuse outbound.
+description: Queue or refuse outbound WhatsApp during quiet-hours windows.
 ---
 
 # quiet-hours
 
-> Status: **v0 stub** — melt body next. Gold Hat: draft-only messaging, teach consent, no dark spam patterns.
+> Status: **stub (L1–L2 cue)** — no timezone engine. Do not invent windows the human did not state.
+
+Respect rest. Gold Hat: a late ping that "just this once" ships is extract.
 
 ## When to use
 
-Enforce quiet-hours windows; queue or refuse outbound.
+- `consent-gate` is about to consider GATE OPEN
+- The human named a quiet window (or asked "is it too late to send?")
 
-## Hard rules (always)
+## Cue (do this much; no more)
 
-- **Draft-only by default.** Never send without an explicit human confirm gate.
-- **No dark spam patterns:** urgency fakes, fake scarcity, guilt loops, silent mass-blast, hidden opt-outs.
-- **Teach consent:** every outbound path explains who sees it, why, and how to stop.
-- **No secrets** in prompts, registry examples, or logs (phones, tokens, chat ids stay local).
-- Provider is swappable (Periskope reference MCP); skills own workflow logic, not vendor lock-in.
+1. If the human stated a window (e.g. "no outbound after 21:00 America/Panama"), treat inside-window as **refuse or queue** the draft. Keep GATE CLOSED.
+2. If they did not state a window, say this skill is a stub and ask: "Is now an allowed window?" Do not guess their timezone.
+3. Queued means: keep the draft, do not send, remind them later in-session. No silent delay-send.
+4. Never override quiet hours to "hit the metric".
 
-## Steps (stub)
-
-1. Restate intent and audience.
-2. Apply this skill's checklist.
-3. Produce draft / triage output with measurable checks.
-4. Hand off to `consent-gate` before any send.
+Then return to `consent-gate` (melted).
 
 ## Measurable checks
 
-- [ ] Output is a draft or report, not a silent send
-- [ ] Quiet-hours / consent considered
-- [ ] No spam-template residue
-- [ ] No real phone numbers or API keys in output
+- [ ] No send during a human-stated quiet window
+- [ ] No invented timezone math
+- [ ] Draft preserved; not discarded as punishment
+
+## Suite
+
+Doctrine: [grok-build-reality-os](https://github.com/HermeticOrmus/grok-build-reality-os). Gold Hat: [GOLD_HAT.md](../../GOLD_HAT.md). Sibling packs: [README suite footer](../../README.md).

@@ -2,3 +2,9 @@
 *.log
 node_modules/
 .grok/plugins/*/data/
+
+# Operator registry and pull/send state — never commit real ids
+wa-registry.json
+**/*registry.local.json
+.grok/state/
+**/last.json
