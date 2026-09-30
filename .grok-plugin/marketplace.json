@@ -1,0 +1,52 @@
+{
+  "name": "libre-whatsapp-grok",
+  "owner": {
+    "name": "Diego Bodart",
+    "url": "https://github.com/HermeticOrmus"
+  },
+  "metadata": {
+    "description": "The Grok Build edition of LibreWhatsApp: the Grok-native libre-whatsapp-grok plugin plus the other LibreWhatsApp-Claude-Code plugins, pinned by commit. The pack's push plugin is held out: its --send flag skips the preview, and this edition's consent-gate refuses skip-gates.",
+    "version": "1.0.0"
+  },
+  "plugins": [
+    {
+      "name": "libre-whatsapp-grok",
+      "description": "Grok-native WhatsApp skills, draft-only: draft-reply writes the reply, template-scrub strips dark-pattern copy, and consent-gate holds every send until an explicit confirm phrase.",
+      "version": "1.0.0",
+      "source": "./plugins/libre-whatsapp-grok"
+    },
+    {
+      "name": "grab",
+      "description": "Copy the latest shell command, URL, or code block someone sent in a WhatsApp chat straight to your clipboard.",
+      "version": "1.0.0",
+      "source": {
+        "source": "url",
+        "url": "https://github.com/HermeticOrmus/LibreWhatsApp-Claude-Code.git",
+        "sha": "4e9dcc1c63d0c240fa9f42a7f6c94e57ef46bfe6",
+        "path": "plugins/grab"
+      }
+    },
+    {
+      "name": "pull",
+      "description": "Read a WhatsApp chat (or a Discord channel or email thread) inside Claude Code: aliases from a local registry, only what is new since the last pull, verbatim quotes.",
+      "version": "1.0.0",
+      "source": {
+        "source": "url",
+        "url": "https://github.com/HermeticOrmus/LibreWhatsApp-Claude-Code.git",
+        "sha": "4e9dcc1c63d0c240fa9f42a7f6c94e57ef46bfe6",
+        "path": "plugins/pull"
+      }
+    },
+    {
+      "name": "transcribe",
+      "description": "Transcribe WhatsApp voice notes locally with whisper.cpp or OpenAI Whisper; the audio never leaves your machine.",
+      "version": "1.0.0",
+      "source": {
+        "source": "url",
+        "url": "https://github.com/HermeticOrmus/LibreWhatsApp-Claude-Code.git",
+        "sha": "4e9dcc1c63d0c240fa9f42a7f6c94e57ef46bfe6",
+        "path": "plugins/transcribe"
+      }
+    }
+  ]
+}

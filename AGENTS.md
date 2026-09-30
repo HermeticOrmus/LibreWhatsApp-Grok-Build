@@ -20,15 +20,15 @@ Counts: [docs/DEPTH_MATRIX.md](./docs/DEPTH_MATRIX.md).
 
 ## How to use this suite
 
-1. Install skills (see [QUICK_START.md](./QUICK_START.md)).
+1. Install the marketplace (see [QUICK_START.md](./QUICK_START.md)): the `libre-whatsapp-grok` plugin plus the pack's `pull`, `grab` and `transcribe`.
 2. Keep Reality OS as the global doctrine layer.
-3. Use melted skills for draft / scrub / gate; use `AGENTS/whatsapp-orchestrator.md` for a full pass (stub coordinator).
+3. Use melted skills for draft / scrub / gate; use `stubs/agents/whatsapp-orchestrator.md` for a full pass (stub coordinator, not installed).
 
 ## Agents in this repo
 
 | Agent | File | Role |
 |-------|------|------|
-| whatsapp-orchestrator | `AGENTS/whatsapp-orchestrator.md` | Coordinates pull, triage, draft, scrub, quiet-hours, consent |
+| whatsapp-orchestrator | `stubs/agents/whatsapp-orchestrator.md` | Coordinates pull, triage, draft, scrub, quiet-hours, consent (stub; not installed) |
 
 ## Liquid Gold
 

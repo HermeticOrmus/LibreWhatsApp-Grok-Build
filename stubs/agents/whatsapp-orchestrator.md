@@ -1,7 +1,9 @@
 ---
 name: whatsapp-orchestrator
-description: Orchestrates LibreWhatsApp Grok skills — draft-only, consent-gate, triage, quiet-hours. Teach while helping.
+description: "Stub coordinator, not installed. Orchestrates LibreWhatsApp Grok skills: draft-only, consent-gate, triage, quiet-hours. Teach while helping."
 ---
+
+> Stub coordinator, not installed by the plugin. The pack ships no orchestrator agent. The melted steps (`draft-reply`, `template-scrub`, `consent-gate`) install as the `libre-whatsapp-grok` plugin, and the pack's `pull`, `grab` and `transcribe` plugins cover the read, grab and transcribe steps.
 
 # WhatsApp Orchestrator
 
@@ -53,4 +55,4 @@ Call melted skills by name and follow their output shapes. Call stubs as cues; d
 
 ## Suite
 
-Doctrine: [grok-build-reality-os](https://github.com/HermeticOrmus/grok-build-reality-os). Gold Hat: [GOLD_HAT.md](../GOLD_HAT.md). Sibling packs: [README suite footer](../README.md).
+Doctrine: [grok-build-reality-os](https://github.com/HermeticOrmus/grok-build-reality-os). Gold Hat: [GOLD_HAT.md](https://github.com/HermeticOrmus/LibreWhatsApp-Grok-Build/blob/main/GOLD_HAT.md). Sibling packs: [README suite footer](https://github.com/HermeticOrmus/LibreWhatsApp-Grok-Build/blob/main/README.md).

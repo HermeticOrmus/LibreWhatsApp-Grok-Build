@@ -1,9 +1,11 @@
 ---
 name: voice-local
-description: Transcribe WhatsApp voice notes with local Whisper — audio stays on the machine.
+description: "Stub cue, not installed. Transcribe WhatsApp voice notes with local Whisper: audio stays on the machine. Full depth: the transcribe plugin of LibreWhatsApp-Claude-Code."
 ---
 
 # voice-local
+
+> Stub, not installed by the plugin. The real depth is the [`transcribe`](https://github.com/HermeticOrmus/LibreWhatsApp-Claude-Code/tree/main/plugins/transcribe) plugin of LibreWhatsApp-Claude-Code, which this edition's marketplace installs: `grok plugin install transcribe@libre-whatsapp-grok`.
 
 > Status: **stub (L1–L2 cue)** — not a melted transcriber. Do not invent cloud STT or upload the audio.
 
@@ -31,4 +33,4 @@ Hand readable text to `thread-triage` (stub) or `draft-reply` (melted). Outbound
 
 ## Suite
 
-Doctrine: [grok-build-reality-os](https://github.com/HermeticOrmus/grok-build-reality-os). Gold Hat: [GOLD_HAT.md](../../GOLD_HAT.md). Sibling packs: [README suite footer](../../README.md).
+Doctrine: [grok-build-reality-os](https://github.com/HermeticOrmus/grok-build-reality-os). Gold Hat: [GOLD_HAT.md](https://github.com/HermeticOrmus/LibreWhatsApp-Grok-Build/blob/main/GOLD_HAT.md). Sibling packs: [README suite footer](https://github.com/HermeticOrmus/LibreWhatsApp-Grok-Build/blob/main/README.md).

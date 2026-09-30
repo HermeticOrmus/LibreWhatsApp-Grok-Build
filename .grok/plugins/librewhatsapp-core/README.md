@@ -1,11 +1,13 @@
-# librewhatsapp-core (Grok plugin stub)
+# librewhatsapp-core (v0 plugin stub, kept as a dogfood copy)
 
-Bundles core LibreWhatsApp skills for install-from-path.
+This was the v0 plugin bundle. It had no manifest and no skills, so it bundled nothing: Grok saw it only as a project plugin with one agent, the stub orchestrator. It stays as the dogfood copy of `stubs/agents/whatsapp-orchestrator.md` (the two files must match; CI checks it).
 
-Skills live primarily under repo `skills/` — copy or symlink into this plugin's `skills/` when packaging. Dogfood copies: `.grok/skills/`.
+The installable plugin is now [`plugins/libre-whatsapp-grok/`](https://github.com/HermeticOrmus/LibreWhatsApp-Grok-Build/tree/main/plugins/libre-whatsapp-grok), with its own manifest. Install it with `grok plugin marketplace add HermeticOrmus/LibreWhatsApp-Grok-Build` and `grok plugin install libre-whatsapp-grok@libre-whatsapp-grok`.
+
+The melted skills now live in that plugin's `skills/`; the stubs live in `stubs/skills/`. Dogfood copies of both: `.grok/skills/`.
 
 Melted toward L3–L4: `draft-reply`, `consent-gate`, `template-scrub`.
-Still stubs: `chat-pull`, `thread-triage`, `quiet-hours`, `grab-snippet`, `voice-local`.
+Still stubs (in `stubs/skills/`, not installed): `chat-pull`, `thread-triage`, `quiet-hours`, `grab-snippet`, `voice-local`.
 
 Gold Hat: draft-only messaging, consent gates, no dark spam patterns.
 

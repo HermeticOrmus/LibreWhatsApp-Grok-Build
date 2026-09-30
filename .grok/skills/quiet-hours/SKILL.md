@@ -1,9 +1,11 @@
 ---
 name: quiet-hours
-description: Queue or refuse outbound WhatsApp during quiet-hours windows.
+description: "Stub cue, not installed. Queue or refuse outbound WhatsApp during quiet-hours windows. Full depth: no pack plugin yet; this cue waits to be melted."
 ---
 
 # quiet-hours
+
+> Stub, not installed by the plugin. No LibreWhatsApp-Claude-Code plugin covers this cue. It is Grok-native and waits to be melted; see [CONTRIBUTING.md](https://github.com/HermeticOrmus/LibreWhatsApp-Grok-Build/blob/main/CONTRIBUTING.md).
 
 > Status: **stub (L1–L2 cue)** — no timezone engine. Do not invent windows the human did not state.
 
@@ -31,4 +33,4 @@ Then return to `consent-gate` (melted).
 
 ## Suite
 
-Doctrine: [grok-build-reality-os](https://github.com/HermeticOrmus/grok-build-reality-os). Gold Hat: [GOLD_HAT.md](../../GOLD_HAT.md). Sibling packs: [README suite footer](../../README.md).
+Doctrine: [grok-build-reality-os](https://github.com/HermeticOrmus/grok-build-reality-os). Gold Hat: [GOLD_HAT.md](https://github.com/HermeticOrmus/LibreWhatsApp-Grok-Build/blob/main/GOLD_HAT.md). Sibling packs: [README suite footer](https://github.com/HermeticOrmus/LibreWhatsApp-Grok-Build/blob/main/README.md).

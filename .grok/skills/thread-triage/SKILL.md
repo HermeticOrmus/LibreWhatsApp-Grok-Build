@@ -1,9 +1,11 @@
 ---
 name: thread-triage
-description: Triage open WhatsApp loops and priority threads without nagging.
+description: "Stub cue, not installed. Triage open WhatsApp loops and priority threads without nagging. Full depth: no pack plugin yet; the nearest is the pull plugin of LibreWhatsApp-Claude-Code."
 ---
 
 # thread-triage
+
+> Stub, not installed by the plugin. No LibreWhatsApp-Claude-Code plugin covers this cue yet. The nearest depth is the [`pull`](https://github.com/HermeticOrmus/LibreWhatsApp-Claude-Code/tree/main/plugins/pull) plugin, which reads the threads this cue would sort: `grok plugin install pull@libre-whatsapp-grok`.
 
 > Status: **stub (L1–L2 cue)** — not a melted prioritizer. Do not invent scores, SLA clocks, or nag sequences.
 
@@ -32,4 +34,4 @@ Hand the chosen thread to `draft-reply`. Any outbound still hits `template-scrub
 
 ## Suite
 
-Doctrine: [grok-build-reality-os](https://github.com/HermeticOrmus/grok-build-reality-os). Gold Hat: [GOLD_HAT.md](../../GOLD_HAT.md). Sibling packs: [README suite footer](../../README.md).
+Doctrine: [grok-build-reality-os](https://github.com/HermeticOrmus/grok-build-reality-os). Gold Hat: [GOLD_HAT.md](https://github.com/HermeticOrmus/LibreWhatsApp-Grok-Build/blob/main/GOLD_HAT.md). Sibling packs: [README suite footer](https://github.com/HermeticOrmus/LibreWhatsApp-Grok-Build/blob/main/README.md).
