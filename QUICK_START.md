@@ -40,11 +40,13 @@ One marketplace brings the Grok-native plugin and the pack's plugins, each pinne
 
 ```bash
 grok plugin marketplace add HermeticOrmus/LibreWhatsApp-Grok-Build
-grok plugin install libre-whatsapp-grok@libre-whatsapp-grok
-grok plugin install pull@libre-whatsapp-grok
-grok plugin install grab@libre-whatsapp-grok
-grok plugin install transcribe@libre-whatsapp-grok
+grok plugin install libre-whatsapp-grok@LibreWhatsApp-Grok-Build
+grok plugin install pull@LibreWhatsApp-Grok-Build
+grok plugin install grab@LibreWhatsApp-Grok-Build
+grok plugin install transcribe@LibreWhatsApp-Grok-Build
 ```
+
+Grok registers a marketplace added from GitHub under the repo's name, so the part after `@` is `LibreWhatsApp-Grok-Build`, not the manifest name `libre-whatsapp-grok`. A bare plugin name also works when no other marketplace you added has a plugin by that name.
 
 Confirm what landed:
 

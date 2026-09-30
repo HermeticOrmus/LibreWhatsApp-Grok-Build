@@ -36,11 +36,11 @@ See [QUICK_START.md](./QUICK_START.md) for the marketplace, dogfood, and copy pa
 
 ```bash
 grok plugin marketplace add HermeticOrmus/LibreWhatsApp-Grok-Build
-grok plugin install libre-whatsapp-grok@libre-whatsapp-grok
+grok plugin install libre-whatsapp-grok@LibreWhatsApp-Grok-Build
 # The pack's plugins, pinned by commit:
-grok plugin install pull@libre-whatsapp-grok
-grok plugin install grab@libre-whatsapp-grok
-grok plugin install transcribe@libre-whatsapp-grok
+grok plugin install pull@LibreWhatsApp-Grok-Build
+grok plugin install grab@LibreWhatsApp-Grok-Build
+grok plugin install transcribe@LibreWhatsApp-Grok-Build
 grok plugin list
 ```
 

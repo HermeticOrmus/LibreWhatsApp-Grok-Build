@@ -14,7 +14,7 @@ Pass order: `draft-reply`, then `template-scrub`, then `consent-gate`. A send to
 
 ```bash
 grok plugin marketplace add HermeticOrmus/LibreWhatsApp-Grok-Build
-grok plugin install libre-whatsapp-grok@libre-whatsapp-grok
+grok plugin install libre-whatsapp-grok@LibreWhatsApp-Grok-Build
 ```
 
 The same marketplace offers the LibreWhatsApp-Claude-Code plugins `pull`, `grab` and `transcribe`, pinned by commit. The pack's `push` is held out: its `--send` flag skips the preview this plugin requires.

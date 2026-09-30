@@ -5,7 +5,7 @@ description: "Stub cue, not installed. Grab the latest URL, command, or code blo
 
 # grab-snippet
 
-> Stub, not installed by the plugin. The real depth is the [`grab`](https://github.com/HermeticOrmus/LibreWhatsApp-Claude-Code/tree/main/plugins/grab) plugin of LibreWhatsApp-Claude-Code, which this edition's marketplace installs: `grok plugin install grab@libre-whatsapp-grok`.
+> Stub, not installed by the plugin. The real depth is the [`grab`](https://github.com/HermeticOrmus/LibreWhatsApp-Claude-Code/tree/main/plugins/grab) plugin of LibreWhatsApp-Claude-Code, which this edition's marketplace installs: `grok plugin install grab@LibreWhatsApp-Grok-Build`.
 
 > Status: **stub (L1–L2 cue)** — not a melted clipboard pipeline. Do not invent `/grab` slash-command theater.
 
