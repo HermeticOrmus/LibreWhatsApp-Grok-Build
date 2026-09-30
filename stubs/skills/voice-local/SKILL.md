@@ -5,7 +5,7 @@ description: "Stub cue, not installed. Transcribe WhatsApp voice notes with loca
 
 # voice-local
 
-> Stub, not installed by the plugin. The real depth is the [`transcribe`](https://github.com/HermeticOrmus/LibreWhatsApp-Claude-Code/tree/main/plugins/transcribe) plugin of LibreWhatsApp-Claude-Code, which this edition's marketplace installs: `grok plugin install transcribe@libre-whatsapp-grok`.
+> Stub, not installed by the plugin. The real depth is the [`transcribe`](https://github.com/HermeticOrmus/LibreWhatsApp-Claude-Code/tree/main/plugins/transcribe) plugin of LibreWhatsApp-Claude-Code, which this edition's marketplace installs: `grok plugin install transcribe@LibreWhatsApp-Grok-Build`.
 
 > Status: **stub (L1–L2 cue)** — not a melted transcriber. Do not invent cloud STT or upload the audio.
 

@@ -5,7 +5,7 @@ description: "Stub cue, not installed. Triage open WhatsApp loops and priority t
 
 # thread-triage
 
-> Stub, not installed by the plugin. No LibreWhatsApp-Claude-Code plugin covers this cue yet. The nearest depth is the [`pull`](https://github.com/HermeticOrmus/LibreWhatsApp-Claude-Code/tree/main/plugins/pull) plugin, which reads the threads this cue would sort: `grok plugin install pull@libre-whatsapp-grok`.
+> Stub, not installed by the plugin. No LibreWhatsApp-Claude-Code plugin covers this cue yet. The nearest depth is the [`pull`](https://github.com/HermeticOrmus/LibreWhatsApp-Claude-Code/tree/main/plugins/pull) plugin, which reads the threads this cue would sort: `grok plugin install pull@LibreWhatsApp-Grok-Build`.
 
 > Status: **stub (L1–L2 cue)** — not a melted prioritizer. Do not invent scores, SLA clocks, or nag sequences.
 

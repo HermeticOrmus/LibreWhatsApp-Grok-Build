@@ -5,7 +5,7 @@ description: "Stub cue, not installed. Pull a WhatsApp chat and show only-what-i
 
 # chat-pull
 
-> Stub, not installed by the plugin. The real depth is the [`pull`](https://github.com/HermeticOrmus/LibreWhatsApp-Claude-Code/tree/main/plugins/pull) plugin of LibreWhatsApp-Claude-Code, which this edition's marketplace installs: `grok plugin install pull@libre-whatsapp-grok`.
+> Stub, not installed by the plugin. The real depth is the [`pull`](https://github.com/HermeticOrmus/LibreWhatsApp-Claude-Code/tree/main/plugins/pull) plugin of LibreWhatsApp-Claude-Code, which this edition's marketplace installs: `grok plugin install pull@LibreWhatsApp-Grok-Build`.
 
 > Status: **stub (L1–L2 cue)** — not a melted pull protocol. Do not invent Claude `/pull` depth, state-file schemas, or slash-command theater.
 
