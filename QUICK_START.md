@@ -6,46 +6,78 @@ Doctrine first: put [grok-build-reality-os](https://github.com/HermeticOrmus/gro
 
 ## Prerequisites
 
-- `git`
-- Grok Build installed and able to see skills under `.grok/skills/` or `~/.grok/skills/`
-- Optional: Periskope (or other) WhatsApp MCP for live pull — melted skills work as draft / scrub / gate without it
-- Local Whisper only if you later use `voice-local` (still a stub)
-- Optional local registry: copy `registry.example.json` to `~/.grok/wa-registry.json` and fill **your** aliases. Never commit that file.
+- Grok Build installed: `curl -fsSL https://x.ai/cli/install.sh | bash`, then `grok --version`. Plugin commands need no login.
+- `git` (only for the dogfood and copy paths)
+- Optional: Periskope (or other) WhatsApp MCP for live pull. The melted skills work as draft, scrub and gate without it
+- Local Whisper only if you use the pack's `transcribe` plugin (`voice-local` here is still a stub)
+- Optional local registry: copy `registry.example.json` to `~/.grok/wa-registry.json` and fill **your** aliases. Never commit that file. The pack's `pull` and `grab` read `~/.claude/wa-registry.json` unless you `export WA_REGISTRY=~/.grok/wa-registry.json`.
 
 ## Layout this file assumes
 
 Verified against this repository (do not invent extra folders):
 
 ```
-skills/<name>/SKILL.md                 # canonical skill bodies (copy these)
-AGENTS/whatsapp-orchestrator.md
+.grok-plugin/marketplace.json                     # the marketplace: libre-whatsapp-grok, then the pack's plugins by pinned commit
+plugins/libre-whatsapp-grok/.grok-plugin/plugin.json
+plugins/libre-whatsapp-grok/skills/<name>/SKILL.md  # the melted skills (canonical)
+stubs/skills/<name>/SKILL.md                      # stub cues; not installed
+stubs/agents/whatsapp-orchestrator.md             # stub coordinator; not installed
 registry.example.json
 docs/DEPTH_MATRIX.md
 docs/MELT_RULES.md
-.grok/skills/<name>/SKILL.md           # dogfood copy; must match skills/
-.grok/plugins/librewhatsapp-core/      # plugin stub; not required for first run
+.grok/skills/<name>/SKILL.md                      # dogfood copy; must match its source above
+.grok/plugins/librewhatsapp-core/                 # v0 bundle stub; dogfood copy of the stub orchestrator
 ```
 
-Melted (usable now): `skills/draft-reply/SKILL.md`, `skills/consent-gate/SKILL.md`, `skills/template-scrub/SKILL.md`.
-Still stubs: `chat-pull`, `thread-triage`, `quiet-hours`, `grab-snippet`, `voice-local`, plus the orchestrator. Honest table: [docs/DEPTH_MATRIX.md](./docs/DEPTH_MATRIX.md).
+Melted (usable now): `plugins/libre-whatsapp-grok/skills/draft-reply/SKILL.md`, `plugins/libre-whatsapp-grok/skills/consent-gate/SKILL.md`, `plugins/libre-whatsapp-grok/skills/template-scrub/SKILL.md`.
+Still stubs, in `stubs/`: `chat-pull`, `thread-triage`, `quiet-hours`, `grab-snippet`, `voice-local`, plus the orchestrator. Each stub names the pack plugin with the real depth. Honest table: [docs/DEPTH_MATRIX.md](./docs/DEPTH_MATRIX.md).
 
 ## Install (pick one)
 
-### A. Dogfood this repo (fastest)
+### A. Marketplace (recommended)
+
+One marketplace brings the Grok-native plugin and the pack's plugins, each pinned to a commit:
+
+```bash
+grok plugin marketplace add HermeticOrmus/LibreWhatsApp-Grok-Build
+grok plugin install libre-whatsapp-grok@libre-whatsapp-grok
+grok plugin install pull@libre-whatsapp-grok
+grok plugin install grab@libre-whatsapp-grok
+grok plugin install transcribe@libre-whatsapp-grok
+```
+
+Confirm what landed:
+
+```bash
+grok plugin list
+grok plugin details libre-whatsapp-grok
+```
+
+You should see `libre-whatsapp-grok` (three skills: `draft-reply`, `consent-gate`, `template-scrub`) plus `pull`, `grab` and `transcribe`. The pack's `push` is not offered: its `--send` flag skips the preview, and this edition refuses skip-gates ([LEDGER.md](./LEDGER.md), K-09).
+
+Only the Grok-native plugin, without the marketplace:
+
+```bash
+grok plugin install HermeticOrmus/LibreWhatsApp-Grok-Build#plugins/libre-whatsapp-grok
+```
+
+Do not install the repo root itself (`grok plugin install HermeticOrmus/LibreWhatsApp-Grok-Build`): since v1.0.0 the root holds no skills, so Grok installs an empty plugin.
+
+### B. Dogfood this repo
 
 ```bash
 git clone https://github.com/HermeticOrmus/LibreWhatsApp-Grok-Build.git
 cd LibreWhatsApp-Grok-Build
-# Skills are already at .grok/skills/ — open this folder in Grok Build.
+# Dogfood copies of the melted skills and the stubs are at .grok/skills/; open this folder in Grok Build.
 ```
 
-### B. Install into your project
+### C. Copy into your project (no plugin manager)
 
 ```bash
 git clone https://github.com/HermeticOrmus/LibreWhatsApp-Grok-Build.git ~/LibreWhatsApp-Grok-Build
 cd /path/to/your-project
 mkdir -p .grok/skills
-cp -R ~/LibreWhatsApp-Grok-Build/skills/* .grok/skills/
+cp -R ~/LibreWhatsApp-Grok-Build/plugins/libre-whatsapp-grok/skills/* .grok/skills/
 ```
 
 Confirm the copy landed:
@@ -57,17 +89,17 @@ test -f .grok/skills/template-scrub/SKILL.md
 ls .grok/skills
 ```
 
-You should see eight skill directories, matching `skills/` in this repo.
+You should see three skill directories, matching `plugins/libre-whatsapp-grok/skills/` in this repo. The stubs are not copied: they are cues, not skills.
 
-### C. User-global
+### D. User-global copy
 
 ```bash
 git clone https://github.com/HermeticOrmus/LibreWhatsApp-Grok-Build.git ~/LibreWhatsApp-Grok-Build
 mkdir -p ~/.grok/skills
-cp -R ~/LibreWhatsApp-Grok-Build/skills/* ~/.grok/skills/
+cp -R ~/LibreWhatsApp-Grok-Build/plugins/libre-whatsapp-grok/skills/* ~/.grok/skills/
 ```
 
-Same three `test -f` checks as B, under `~/.grok/skills/`.
+Same three `test -f` checks as C, under `~/.grok/skills/`.
 
 Optional registry (machine-local, never the repo):
 
@@ -76,7 +108,7 @@ cp ~/LibreWhatsApp-Grok-Build/registry.example.json ~/.grok/wa-registry.json
 # Edit aliases only. No real numbers belong in git.
 ```
 
-Copy `AGENTS/whatsapp-orchestrator.md` only when you want a full-suite pass. It is still a stub coordinator.
+Copy `stubs/agents/whatsapp-orchestrator.md` only when you want a full-suite pass. It is still a stub coordinator, and no install path ships it.
 
 ## First-run teach cue
 
@@ -88,7 +120,7 @@ In Grok Build, on a thread you own (paste context if you have no MCP):
 
 You used melted LibreWhatsApp depth on Grok — not a Claude `/push --send` paste, not a silent blast.
 
-If you later pull live chat, `chat-pull` is still a stub: aliases, only-new, no send. Outbound still dies at this gate.
+If you later pull live chat, `chat-pull` is still a stub; the pack's `pull` plugin holds the real depth (aliases, only-new, no send). Outbound still dies at this gate.
 
 ## Hard rules
 
@@ -100,8 +132,8 @@ If you later pull live chat, `chat-pull` is still a stub: aliases, only-new, no 
 
 ## Smoke checklist
 
-- [ ] `draft-reply`, `consent-gate`, and `template-scrub` files exist at the install path you chose
-- [ ] Grok can see those three skills
+- [ ] `grok plugin list` shows `libre-whatsapp-grok` (or the three skill files exist at the copy path you chose)
+- [ ] Grok can see `draft-reply`, `consent-gate`, and `template-scrub`
 - [ ] One skill run produces a draft or scrub report (not a silent send)
 - [ ] Consent preview shown; gate stays CLOSED without a confirm phrase
 - [ ] Quiet-hours mentioned as stub-ask or a human-stated window

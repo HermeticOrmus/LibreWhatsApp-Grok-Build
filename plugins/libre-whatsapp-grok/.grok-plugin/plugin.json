@@ -1,0 +1,20 @@
+{
+  "name": "libre-whatsapp-grok",
+  "version": "1.0.0",
+  "description": "Grok-native WhatsApp skills, draft-only: draft-reply writes the reply, template-scrub strips dark-pattern copy, and consent-gate holds every send until an explicit confirm phrase.",
+  "author": {
+    "name": "Diego Bodart",
+    "url": "https://github.com/HermeticOrmus"
+  },
+  "homepage": "https://github.com/HermeticOrmus/LibreWhatsApp-Grok-Build",
+  "repository": "https://github.com/HermeticOrmus/LibreWhatsApp-Grok-Build",
+  "license": "MIT",
+  "keywords": [
+    "whatsapp",
+    "messaging",
+    "draft-only",
+    "consent",
+    "gold-hat",
+    "grok-build"
+  ]
+}

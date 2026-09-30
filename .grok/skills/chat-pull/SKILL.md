@@ -1,9 +1,11 @@
 ---
 name: chat-pull
-description: Pull a WhatsApp chat and show only-what-is-new via local registry aliases.
+description: "Stub cue, not installed. Pull a WhatsApp chat and show only-what-is-new via local registry aliases. Full depth: the pull plugin of LibreWhatsApp-Claude-Code."
 ---
 
 # chat-pull
+
+> Stub, not installed by the plugin. The real depth is the [`pull`](https://github.com/HermeticOrmus/LibreWhatsApp-Claude-Code/tree/main/plugins/pull) plugin of LibreWhatsApp-Claude-Code, which this edition's marketplace installs: `grok plugin install pull@libre-whatsapp-grok`.
 
 > Status: **stub (L1–L2 cue)** — not a melted pull protocol. Do not invent Claude `/pull` depth, state-file schemas, or slash-command theater.
 
@@ -33,4 +35,4 @@ Hand off leftovers to `thread-triage` (stub) and `draft-reply` (melted). Never e
 
 ## Suite
 
-Doctrine: [grok-build-reality-os](https://github.com/HermeticOrmus/grok-build-reality-os). Gold Hat: [GOLD_HAT.md](../../GOLD_HAT.md). Sibling packs: [README suite footer](../../README.md).
+Doctrine: [grok-build-reality-os](https://github.com/HermeticOrmus/grok-build-reality-os). Gold Hat: [GOLD_HAT.md](https://github.com/HermeticOrmus/LibreWhatsApp-Grok-Build/blob/main/GOLD_HAT.md). Sibling packs: [README suite footer](https://github.com/HermeticOrmus/LibreWhatsApp-Grok-Build/blob/main/README.md).

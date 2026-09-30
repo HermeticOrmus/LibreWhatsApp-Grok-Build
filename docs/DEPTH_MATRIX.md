@@ -32,7 +32,25 @@ This repo is **not** L3–L4 suite-wide. Three messaging skills are melted towar
 
 This repo now: **3 melted skills**, **5 stub skills**, **1 stub agent**.
 
-Dogfood copies of every skill live at `.grok/skills/<name>/SKILL.md` and must match `skills/<name>/SKILL.md`.
+Dogfood copies of every skill live at `.grok/skills/<name>/SKILL.md` and must match their source: `plugins/libre-whatsapp-grok/skills/<name>/SKILL.md` for melted skills, `stubs/skills/<name>/SKILL.md` for stubs. CI checks it.
+
+## v1.0.0: where each row lives
+
+Melted skills install as the `libre-whatsapp-grok` plugin. Stubs stay in `stubs/` and never install; each names the pack plugin that holds the real depth. The pack plugins install from the same marketplace, pinned to one commit of [LibreWhatsApp-Claude-Code](https://github.com/HermeticOrmus/LibreWhatsApp-Claude-Code) (see `.grok-plugin/marketplace.json`). They are installed depth, not this repo's inventory.
+
+| ID | Lives at | Installs | Real depth, installed by this marketplace |
+|----|----------|----------|-------------------------------------------|
+| draft-reply | `plugins/libre-whatsapp-grok/skills/draft-reply/` | yes, in `libre-whatsapp-grok` | this skill |
+| consent-gate | `plugins/libre-whatsapp-grok/skills/consent-gate/` | yes, in `libre-whatsapp-grok` | this skill |
+| template-scrub | `plugins/libre-whatsapp-grok/skills/template-scrub/` | yes, in `libre-whatsapp-grok` | this skill |
+| chat-pull | `stubs/skills/chat-pull/` | no | `pull` |
+| thread-triage | `stubs/skills/thread-triage/` | no | none yet; nearest is `pull` |
+| quiet-hours | `stubs/skills/quiet-hours/` | no | none; Grok-native cue waiting to melt |
+| grab-snippet | `stubs/skills/grab-snippet/` | no | `grab` |
+| voice-local | `stubs/skills/voice-local/` | no | `transcribe` |
+| whatsapp-orchestrator | `stubs/agents/whatsapp-orchestrator.md` | no | none; the pack ships no agents |
+
+The pack's `push` plugin is held out of this marketplace: its `--send` flag skips the preview that `consent-gate` requires ([LEDGER.md](../LEDGER.md), K-09 and K-11).
 
 ## Suite
 
